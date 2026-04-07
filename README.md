@@ -81,7 +81,7 @@ Ohne API Key läuft die Anwendung automatisch im Fallback Modus.
 
 Bei der Entwicklung wurde Claude unterstützend genutzt, zum Beispiel für Ideen, Struktur und einzelne Implementierungen.
 
-Die Logik, Anpassungen und Integration in das System wurden eigenständig umgesetzt.
+Die Auswahl, Anpassung, Integration und Funktionsprüfung der Logik wurden eigenständig durchgeführt.
 
 ## Hinweis
 
