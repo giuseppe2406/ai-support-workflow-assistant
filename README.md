@@ -1,4 +1,4 @@
-# AI Support Workflow Assistant
+# Ticket- & Support-System
 
 Ein kleines Support Tool, das zeigt, wie eingehende Kundenanfragen automatisch eingeordnet und als Tickets verarbeitet werden können.
 
