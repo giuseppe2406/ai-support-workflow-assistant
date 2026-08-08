@@ -1,63 +1,69 @@
-# Ticket- & Support-System
+# SupportDesk – Ticket- & Support-System
 
-Ein kleines Support Tool, das zeigt, wie eingehende Kundenanfragen automatisch eingeordnet und als Tickets verarbeitet werden können.
+Support-Tool, das eingehende Kundenanfragen automatisch einordnet und als Ticket
+im System anlegt. Die Anwendung läuft im Browser und nutzt einen Node.js-Server
+für Logik, API-Anbindung und die optionale KI-Analyse.
 
-Die App läuft im Browser, nutzt aber im Hintergrund einen Node.js Server für die Logik und optionale KI Unterstützung.
+![Automatische Einordnung einer Anfrage](analyse.png)
+
+## Technologien
+
+Node.js · JavaScript · REST · Anthropic API · HTML/CSS
 
 ## Idee
 
-Statt Support Anfragen manuell zu sortieren, übernimmt das System den ersten Schritt.
-
-- Anfrage analysieren
-- Kategorie erkennen
-- Priorität einschätzen
-- passendes Team vorschlagen
-
-Ziel war es, den Support Workflow übersichtlicher und strukturierter darzustellen.
+Statt Support-Anfragen manuell zu sortieren, übernimmt das System den ersten
+Schritt: Anfrage analysieren, Kategorie erkennen, Priorität einschätzen und ein
+passendes Team vorschlagen. Der Support-Workflow wird dadurch strukturiert
+abgebildet, vom Eingang der Anfrage bis zum abgeschlossenen Ticket.
 
 ## Funktionen
 
-- Eingabe von Kundenanfragen oder Nutzung von Beispieltexten
+- Eingabe von Kundenanfragen oder Nutzung vorbereiteter Beispieltexte
 - Automatische Einordnung nach Kategorie, Stimmung und Dringlichkeit
+- Urgency-Score in Prozent und Confidence-Wert zur Einordnung
 - Priorisierung von Low bis Critical
-- Vorschlag für zuständiges Team
-- Erstellung und Verwaltung von Tickets
-- Status: Open, In Progress, Resolved
-- Such und Filterfunktion für bessere Übersicht
+- Vorschlag für das zuständige Team
+- Automatische Kennzeichnung eskalationsbedürftiger Tickets
+- Geschätzte Bearbeitungsdauer pro Ticket
+- Verwaltung der Tickets mit den Status Open, In Progress und Resolved
+- Such- und Filterfunktion über alle Tickets, Filter nach Status und Priorität
 - Interne Notizen pro Ticket
-- Timeline mit allen Änderungen
-- Kleines Dashboard mit Kennzahlen
-- KI Analyse und Antwortvorschläge optional
-- Funktioniert auch komplett ohne KI im Fallback Modus
+- Timeline mit allen Änderungen am Ticket
+- Dashboard mit Kennzahlen zum Ticketbestand
+- Optionale KI-Analyse mit Antwortvorschlägen
+- Regelbasierter Fallback-Modus, der ohne API-Key funktioniert
+
+![Ticketdetail mit Antwortfeld, Notizen und Timeline](ticket-detail.png)
 
 ## Wie es funktioniert
 
-Du gibst eine Nachricht ein und daraus wird ein Ticket erstellt.
+Aus einer eingegebenen Nachricht wird ein Ticket erzeugt. Mit hinterlegtem
+API-Key geht die Anfrage an die Anthropic API und wird strukturiert analysiert,
+also Kategorie, Priorität und Stimmung. Ohne API-Key greift die Anwendung auf
+Regeln und Keywords zurück.
 
-Mit API Key wird die Anfrage an Claude geschickt und strukturiert analysiert, zum Beispiel Kategorie, Priorität oder Stimmung.
+Beide Wege führen zum selben Ergebnis: ein nutzbares Ticket im System. Der
+Fallback ist bewusst so gebaut, dass die Anwendung nicht von einem externen
+Dienst abhängt.
 
-Ohne API Key nutzt das System einfache Regeln und Keywords zur Einordnung.
+Der Rule-based-Modus arbeitet mit Keywords und erreicht dadurch eine geringere
+Trefferquote bei impliziten Formulierungen. Die Confidence wird deshalb mit
+ausgegeben, damit unsichere Einordnungen erkennbar bleiben.
 
-Beide Varianten führen zum gleichen Ergebnis, ein nutzbares Ticket im System.
-
-## Starten
+## Installation
 
 Voraussetzung ist Node.js ab Version 18.
 
-Installation:
-
 ```bash
 npm install
-```
-
-Start:
-
-```bash
 node server.js
 ```
 
-Danach im Browser öffnen:
-`http://localhost:3000`
+Anschließend im Browser öffnen: http://localhost:3000
+
+Die Anwendung benötigt den Server. Ein direkter Aufruf von `index.html`
+funktioniert nicht.
 
 ## Optional KI aktivieren
 
