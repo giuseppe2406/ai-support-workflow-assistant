@@ -73,27 +73,18 @@ Erstelle eine `.env` Datei im Projektordner:
 ANTHROPIC_API_KEY=dein_api_key
 ```
 
-Ohne API Key läuft die Anwendung automatisch im Fallback Modus.
+Ohne API-Key startet die Anwendung automatisch im Fallback-Modus.
 
 ## Projektstruktur
 
-- `index.html` → Aufbau der Oberfläche
-- `style.css` → Design und Layout
-- `app.js` → Frontend Logik
-- `server.js` → Backend und API
-- `package.json` → Abhängigkeiten
+| Datei | Inhalt |
+|---|---|
+| `index.html` | Aufbau der Oberfläche |
+| `style.css` | Design und Layout |
+| `app.js` | Frontend-Logik |
+| `server.js` | Backend und API |
+| `package.json` | Abhängigkeiten |
 
-## Hinweis zur KI Nutzung
+## Entwicklung
 
-Bei der Entwicklung wurde Claude unterstützend genutzt, zum Beispiel für Ideen, Struktur und einzelne Implementierungen.
-
-Die Auswahl, Anpassung, Integration und Funktionsprüfung der Logik wurden eigenständig durchgeführt.
-
-## Hinweis
-
-Die Anwendung läuft lokal auf deinem Rechner.
-`index.html` alleine funktioniert nicht, da ein Server benötigt wird.
-
-## Kurz gesagt
-
-Das Projekt zeigt, wie ein einfaches Support System mit automatischer Ticket Einordnung aufgebaut sein kann, inklusive optionaler KI Integration.
+Architektur, API-Anbindung, Fallback-Logik und Funktionsprüfung wurden eigenständig umgesetzt. Für Ideenfindung und einzelne Implementierungen wurde Claude als Werkzeug eingesetzt.
