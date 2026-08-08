@@ -1,4 +1,4 @@
-# SupportDesk – Ticket- & Support-System
+# SupportDesk – Ticket- and Support-System
 
 Support-Tool, das eingehende Kundenanfragen automatisch einordnet und als Ticket
 im System anlegt. Die Anwendung läuft im Browser und nutzt einen Node.js-Server
